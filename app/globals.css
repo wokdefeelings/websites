@@ -1,33 +1,117 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-blue: #1e66f5;
+  --color-flamingo: #dd7878;
+  --color-green: #40a02b;
+  --color-lavender: #7287fd;
+  --color-maroon: #e64553;
+  --color-mauve: #8839ef;
+  --color-peach: #fe640b;
+  --color-pink: #ea76cb;
+  --color-red: #d20f39;
+  --color-rosewater: #dc8a78;
+  --color-sapphire: #209fb5;
+  --color-sky: #04a5e5;
+  --color-teal: #179299;
+  --color-yellow: #df8e1d;
+
+  --color-text: #4c4f69;
+  --color-subtext1: #5c5f77;
+  --color-subtext0: #6c6f85;
+
+  --color-overlay2: #7c7f93;
+  --color-overlay1: #8c8fa1;
+  --color-overlay0: #9ca0b0;
+  --color-surface2: #acb0be;
+  --color-surface1: #bcc0cc;
+  --color-surface0: #ccd0da;
+
+  --color-base: #eff1f5;
+  --color-mantle: #e6e9ef;
+  --color-crust: #dce0e8;
+
+  color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-blue: #8caaee;
+    --color-flamingo: #eebebe;
+    --color-green: #a6d189;
+    --color-lavender: #babbf1;
+    --color-maroon: #ea999c;
+    --color-mauve: #ca9ee6;
+    --color-peach: #ef9f76;
+    --color-pink: #f4b8e4;
+    --color-red: #e78284;
+    --color-rosewater: #f2d5cf;
+    --color-sapphire: #85c1dc;
+    --color-sky: #99d1db;
+    --color-teal: #81c8be;
+    --color-yellow: #e5c890;
+
+    --color-text: #c6d0f5;
+    --color-subtext1: #b5bfe2;
+    --color-subtext0: #a5adce;
+
+    --color-overlay2: #949cbb;
+    --color-overlay1: #838ba7;
+    --color-overlay0: #737994;
+    --color-surface2: #626880;
+    --color-surface1: #51576d;
+    --color-surface0: #414559;
+
+    --color-base: #303446;
+    --color-mantle: #292c3c;
+    --color-crust: #232634;
   }
+}
+
+* {
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+  scrollbar-width: thin;
+
+  margin: 0;
+}
+
+*::selection {
+  background-color: color-mix(in srgb, var(--color-mauve), transparent 70%);
 }
 
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-base);
+  color: var(--color-subtext1);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+:focus-visible {
+  border-radius: 3px;
+  outline-offset: 3px;
+  outline: 3px solid color-mix(in srgb, var(--color-mauve), transparent 70%);
+}
+
+/* ---------------------------------------------------------------- */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 a {
@@ -35,8 +119,105 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+fieldset {
+  border: none;
+
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--color-subtext1);
+}
+
+input[type="date"],
+input[type="email"],
+input[type="file"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+select {
+  background-color: var(--color-mantle);
+  color: var(--color-text);
+
+  border: 1px solid var(--color-surface1);
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 3px;
+
+  padding: 0.5rem 0.75rem;
+}
+
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+select:focus {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 6px;
+
+  outline-offset: 1px;
+  outline: 3px solid color-mix(in srgb, var(--color-mauve), transparent 70%);
+}
+
+input::file-selector-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+select {
+  padding-left: revert;
+  padding-right: revert;
+}
+
+[popover] {
+  background-color: transparent;
+  border: none;
+
+  position: fixed;
+  inset: auto;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+code,
+kbd {
+  background-color: var(--color-crust);
+  border-radius: 4px;
+
+  padding: 0.25rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: var(--color-mauve);
+  }
+
+  input[type="date"]:hover,
+  input[type="email"]:hover,
+  input[type="file"]:hover,
+  input[type="password"]:hover,
+  input[type="search"]:hover,
+  input[type="tel"]:hover,
+  input[type="text"]:hover,
+  input[type="time"]:hover,
+  select:hover {
+    border: 1px solid color-mix(in srgb, var(--color-mauve), transparent 20%);
   }
 }

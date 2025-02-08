@@ -1,0 +1,51 @@
+.smallNav {
+  padding: 1rem;
+}
+
+.smallNav__select {
+  margin-top: 0.25rem;
+  width: 100%;
+}
+
+.leftNav > h4 {
+  color: var(--color-text);
+  padding-left: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.navMenuItem {
+  border-left: 1px solid color-mix(in srgb, var(--color-mauve), transparent 70%);
+  border-radius: 2px;
+
+  padding: 0.5rem 1rem;
+
+  display: block;
+}
+
+.navMenu > li:first-of-type {
+  color: var(--color-mauve);
+  font-weight: bold;
+}
+
+.hiddenMobile {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hiddenDesktop {
+    display: none;
+  }
+
+  .hiddenMobile {
+    display: block;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navMenuItem:hover {
+    border-left-color: var(--color-mauve);
+    background-color: color-mix(in srgb, var(--color-mauve), transparent 80%);
+
+    color: var(--color-text);
+  }
+}

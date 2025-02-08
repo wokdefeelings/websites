@@ -1,0 +1,39 @@
+.links__container {
+  font-size: smaller;
+  margin-top: 1rem;
+}
+
+.links__list {
+  height: 5rem;
+  padding: 0 1rem;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.links__item {
+  color: color-mix(in srgb, var(--color-mauve), transparent 50%);
+
+  display: flex;
+  gap: 0.5rem;
+}
+
+.links__item > svg {
+  color: var(--color-overlay1);
+  width: 1rem;
+}
+
+@media (min-width: 768px) {
+  .links__container {
+    font-size: inherit;
+    margin-top: 0;
+  }
+
+  .links__list {
+    padding: 0.5rem;
+    height: 100%;
+
+    display: block;
+  }
+}

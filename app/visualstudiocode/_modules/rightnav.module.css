@@ -1,0 +1,77 @@
+.smallNav {
+  padding: 1rem;
+}
+
+.smallNav__select {
+  margin-top: 0.25rem;
+  width: 100%;
+}
+
+.rightNav > h4 {
+  color: var(--color-text);
+  padding-left: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.rightNav__item {
+  border-left: 1px solid transparent;
+  border-radius: 2px;
+
+  padding: 0.125rem 0.5rem;
+
+  display: block;
+}
+
+.rightNav__itemActive {
+  color: var(--color-mauve);
+  font-weight: bold;
+}
+
+.button {
+  background-color: color-mix(in srgb, var(--color-mauve), transparent 90%);
+  border-radius: 6px;
+  border: 1px solid transparent;
+  color: var(--color-text);
+
+  height: 32px;
+  padding: 0.5rem 1rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  cursor: pointer;
+}
+
+.buttonGhost {
+  background-color: initial;
+
+  width: 32px;
+  padding: 0;
+}
+
+.backTop {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hiddenTablet {
+    display: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rightNav__item:hover {
+    border-left-color: color-mix(in srgb, var(--color-mauve), transparent 70%);
+    background-color: color-mix(in srgb, var(--color-mauve), transparent 90%);
+
+    color: var(--color-subtext1);
+  }
+
+  .hover__primaryBlack:hover {
+    background-color: color-mix(in srgb, var(--color-mauve), transparent 80%);
+  }
+}
