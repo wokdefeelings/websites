@@ -2,9 +2,11 @@
 import { useState, useEffect } from "react";
 
 export default function useViewport() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
+    setWidth(window.innerWidth);
+
     function handleResize() {
       setWidth(window.innerWidth);
     }
